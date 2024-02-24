@@ -1,0 +1,88 @@
+/* styles.css */
+* body {
+  background: linear-gradient(to bottom right, rgba(0, 239, 209, 0.5) 50%, rgba(0, 172, 234, 0.5) 50%);
+}
+.planets-directory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+}
+.heading1{
+  color: #705c00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.planet-card {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  background-color: #fff;
+  width: calc(33.33% - 32px);/* Set width to fit content size */
+  max-width: calc(100% - 32px);/* Limit maximum width to prevent cards from expanding too much */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; /* Smooth transition for box shadow */
+}
+
+.planet-card.expanded {
+  height: auto; /* Allow the card to expand vertically */
+}
+.planet-card.expanded h3,
+.planet-card.expanded ul {
+  display: block; /* Show the expanded content */
+}
+.planet-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced box shadow on hover */
+  transform: rotateX(5deg) rotateY(5deg); 
+}
+
+.planet-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #333; /* Title text color */
+  transition: color 0.3s ease; /* Smooth transition for title text color */
+}
+
+.planet-card:hover h2 {
+  color: #ffd519; /* Change title text color on hover */
+}
+
+.planet-card h3 {
+  font-size: 1.2rem;
+  margin-top: 16px;
+}
+
+.planet-card ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.planet-card li {
+  margin-bottom: 8px;
+}
+.expand-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #007bff; /* Button color */
+}
+
+.expand-button:hover {
+  text-decoration: underline; /* Underline effect on hover */
+}
+@media only screen and (min-width: 768px) {
+  .planets-directory {
+    justify-content: space-around; /* Align cards evenly spaced horizontally on larger screens */
+  }
+  .planet-card {
+    max-width: 300px;
+    width: calc(50% - 32px); /* Limit maximum width for cards on larger screens */
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .planet-card {
+    width: calc(33.33% - 32px); /* Adjust width for three cards per row */
+  }
+}
